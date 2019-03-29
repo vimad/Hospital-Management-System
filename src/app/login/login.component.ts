@@ -30,19 +30,8 @@ export class LoginComponent implements OnInit {
     let password = this.loginForm.value.password;
 
     this.loginService.login({username:userName,password:password}).subscribe(
-      (response:LogingResponceDTO) =>{
-        this.loggedInUser = {
-          name: response.displayUserDTO.name,
-          userId: response.displayUserDTO.userId,
-          email: response.displayUserDTO.email,
-          userName: response.displayUserDTO.userName,
-          profileUrl: response.displayUserDTO.profileUrl,
-          expiration: response.displayUserDTO.expiration,
-          hospitalStaffId: response.hospitelStaff.hospitalStaffId,
-          position: response.hospitelStaff.position,
-          channels: response.hospitelStaff.channels
-        };
-        this.loginService.setLoggedInUser(this.loggedInUser);
+      (user:LoggedUser) =>{
+        this.loggedInUser = user;
         this.navigateToUser();
       }
     );

@@ -5,13 +5,17 @@ import { DoctorComponent } from './doctor/doctor.component';
 import { NurseComponent } from './nurse/nurse.component';
 import { ReciptionistComponent } from './reciptionist/reciptionist.component';
 import { AdminComponent } from './admin/admin.component';
+import { DoctorAuthGuard } from './guards/doctor.guard';
+import { NurseAuthGuard } from './guards/nurse_guard';
+import { ReciptionistAuthGuard } from './guards/reciptionist.guard';
+import { AdminAuthGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
-  {path:'doctor', component:DoctorComponent},
-  {path:'nurse', component:NurseComponent},
-  {path:'reciptionist', component:ReciptionistComponent},
-  {path:'admin', component:AdminComponent}
+  {path:'doctor', component:DoctorComponent, canActivate:[DoctorAuthGuard]},
+  {path:'nurse', component:NurseComponent, canActivate:[NurseAuthGuard]},
+  {path:'reciptionist', component:ReciptionistComponent, canActivate:[ReciptionistAuthGuard]},
+  {path:'admin', component:AdminComponent, canActivate:[AdminAuthGuard]}
 ];
 
 @NgModule({
