@@ -9,7 +9,9 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { DoctorComponent } from './doctor/doctor.component';
 import { NurseComponent } from './nurse/nurse.component';
 import { ReciptionistComponent } from './reciptionist/reciptionist.component';
-import { AdminComponent } from './admin/admin.component'
+import { AdminComponent } from './admin/admin.component';
+import { DoctorAppoinmentComponent } from './doctor-appoinment/doctor-appoinment.component';
+import { DoctorChannelComponent } from './doctor-channel/doctor-channel.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AdminComponent } from './admin/admin.component'
     DoctorComponent,
     NurseComponent,
     ReciptionistComponent,
-    AdminComponent
+    AdminComponent,
+    DoctorAppoinmentComponent,
+    DoctorChannelComponent
   ],
   imports: [
     BrowserModule,

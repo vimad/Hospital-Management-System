@@ -12,7 +12,7 @@ export class NurseAuthGuard implements CanActivate{
     canActivate(route:ActivatedRouteSnapshot, status:RouterStateSnapshot){
         let user:LoggedUser = JSON.parse(localStorage.getItem('currentUser'));
         if(user){
-            if(user.position == 'NURSE' || user.position == 'ADMIN'){
+            if(user.position == 'NURSE'){
                 return true;
             }
         }

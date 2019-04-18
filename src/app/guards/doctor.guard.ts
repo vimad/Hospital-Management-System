@@ -16,7 +16,7 @@ export class DoctorAuthGuard implements CanActivate{
     canActivate(route:ActivatedRouteSnapshot, status:RouterStateSnapshot){
         let user:LoggedUser = JSON.parse(localStorage.getItem('currentUser'));
         if(user){
-            if(user.position == "DOCTOR" || user.position == "ADMIN"){
+            if(user.position == "DOCTOR"){
                 return true;
             }
         }

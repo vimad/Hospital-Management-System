@@ -1,0 +1,19 @@
+<button (click)="getChannelInfo()">Get Channel Info</button>
+<table >
+  <thead>
+    <th>Channel Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Patient Limit</th>
+    <th>Number of Appoinments</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let info of channelInfos">
+      <td>{{info.channelDate | date}}</td>
+      <td>{{info.startTime}}</td>
+      <td>{{info.endTime}}</td>
+      <td>{{info.patientLimit}}</td>
+      <td>{{info.appoinments.length}}</td>
+    </tr>
+  </tbody>
+</table>

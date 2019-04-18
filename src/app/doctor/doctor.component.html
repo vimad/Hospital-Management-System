@@ -2,4 +2,6 @@
   doctor works!
 </p>
 
-<button (click)="getChannelInfo()">Get Channel Info</button>
+<button (click)="logOut()">Log out</button>
+
+<app-doctor-channel [docotrId] = 'loggedInDoctor.userId - 4'></app-doctor-channel>
