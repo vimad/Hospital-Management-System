@@ -6,6 +6,5 @@ import { Injectable } from '@angular/core';
 })
 export class AppoinmentService{
     constructor(private httpClient:HttpClient){}
-
     
 }

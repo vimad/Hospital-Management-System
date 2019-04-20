@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Modal</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <label for="drugName">Drug name</label>
+    <input type="text" name="drugName">
+
+    <button (click)="cancel()">Cancel</button>
+    <button (click)="save()">Save</button>
+  </form>
+</div>

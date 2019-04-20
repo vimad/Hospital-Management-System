@@ -4,4 +4,8 @@
 
 <button (click)="logOut()">Log out</button>
 
-<app-doctor-channel [docotrId] = 'loggedInDoctor.userId - 4'></app-doctor-channel>
+<app-doctor-channel [docotrId] = 'loggedInDoctor.userId'></app-doctor-channel>
+
+<button (click)="openDrugModal()">Drug</button>
+
+<button (click)="openChannelModal()">channel</button>
