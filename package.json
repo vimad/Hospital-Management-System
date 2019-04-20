@@ -27,6 +27,7 @@
     "core-js": "^2.5.4",
     "jquery": "^1.9.1",
     "ng-pick-datetime": "^7.0.0",
+    "ng-pick-datetime-moment": "^1.0.8",
     "ngx-bootstrap": "^4.0.1",
     "ngx-toastr": "^10.0.2",
     "popper.js": "^1.14.7",

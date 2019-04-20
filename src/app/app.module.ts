@@ -21,6 +21,7 @@ import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { OwlMomentDateTimeModule } from "ng-pick-datetime-moment";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    OwlMomentDateTimeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
