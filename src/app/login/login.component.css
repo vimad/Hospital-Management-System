@@ -1,0 +1,34 @@
+.btn-login{
+    padding-left: 45%;
+    padding-right: 46%;
+    margin-top: 35px;
+    
+}
+.form-section{
+    position: relative;
+    top:20%;
+    padding-right: 25px;
+    padding-left: 25px;
+  
+}
+
+.surgery-image{
+background-image: url(../../assets/surgery-1807541_1920.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-origin: center;
+padding-top: 30%;
+padding-bottom: 30%;
+
+
+}
+.surgery-image::before{
+    background-color: rgba(0, 208, 255, 0.514);
+    content: '';
+    display: block;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
