@@ -36,8 +36,8 @@ export class ChannelComponent implements OnInit {
   save(){
     let saveChannelDto:SaveChannelDTO = {
       channelDate: this.startTime.format('LL'),
-      startTime: this.startTime.format('LTS'),
-      endTime:this.endTime.format('LTS'),
+      startTime: this.startTime.format('HH:mm:ss'),
+      endTime:this.endTime.format('HH:mm:ss'),
       patientLimit: +this.patientLimit,
       channelDoctorId: +this.doctor
     }
@@ -45,7 +45,8 @@ export class ChannelComponent implements OnInit {
     this.channelService.saveChannelInfo(saveChannelDto)
       .subscribe(
         (res) => {
-          this.toastrService.success("success")
+          this.toastrService.success("success");
+          this.modalRef.hide();
         },
         (error) => {
           this.toastrService.error(error.message);

@@ -8,6 +8,8 @@ export interface LoggedUser{
     hospitalStaffId: number;
     position: string;
     channels: any[];
+    accessToken: string;
+    refreshToken: string;
 }
 
 export interface LogingResponceDTO {

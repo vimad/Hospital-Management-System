@@ -21,7 +21,7 @@ export class DoctorChannelComponent implements OnInit {
   }
 
   getChannelInfo(){
-    this.channelService.getChannelByDoctorId(1)
+    this.channelService.getChannelByDoctorId(this.docotrId)
       .subscribe(
         (response:any) => {
           this.channelInfos = response;

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { DoctorComponent } from './doctor/doctor.component';
 import { NurseComponent } from './nurse/nurse.component';
@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OwlMomentDateTimeModule } from "ng-pick-datetime-moment";
+import { AuthIntercepter } from './shared/auth.intercepter';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,9 @@ import { OwlMomentDateTimeModule } from "ng-pick-datetime-moment";
     OwlNativeDateTimeModule,
     OwlMomentDateTimeModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthIntercepter, multi: true}
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     DrugComponent,

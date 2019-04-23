@@ -10,9 +10,9 @@ import { BASE_URL } from '../shared/constants';
 })
 export class LoginService {
 
-  loggedInUser:LoggedUser;
-
   constructor(private http:HttpClient, private router:Router) { }
+
+  loggedInUser:LoggedUser;
 
   login(reqBody){
     return this.http.post(`${BASE_URL}/user/login`,reqBody)
@@ -28,7 +28,9 @@ export class LoginService {
               expiration: response.displayUserDTO.expiration,
               hospitalStaffId: response.hospitelStaff.hospitalStaffId,
               position: response.hospitelStaff.position,
-              channels: response.hospitelStaff.channels
+              channels: response.hospitelStaff.channels,
+              accessToken: response.displayUserDTO.authToken.accessToken,
+              refreshToken: response.displayUserDTO.authToken.refreshToken
             };
             localStorage.setItem('currentUser',JSON.stringify(this.loggedInUser));
             return this.loggedInUser;
@@ -41,6 +43,11 @@ export class LoginService {
     localStorage.removeItem('currentUser');
     this.loggedInUser = null;
     this.router.navigate(['/']);
+  }
+
+  getLoggedInUser(){
+    this.loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
+    return this.loggedInUser;
   }
 
 }
