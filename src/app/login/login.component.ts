@@ -50,6 +50,9 @@ export class LoginComponent implements OnInit {
     if(this.loggedInUser.position == "ADMIN"){
       this.router.navigate(['/admin']);
     }
+    if(this.loggedInUser.position == "PATIENT"){
+      this.router.navigate(['/patient'])
+    }
   }
 
 }

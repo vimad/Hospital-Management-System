@@ -5,16 +5,17 @@ export interface LoggedUser{
     userName: string;
     profileUrl: string;
     expiration: number;
-    hospitalStaffId: number;
-    position: string;
-    channels: any[];
+    hospitalStaffId?: number;
+    position?: string;
+    channels?: any[];
     accessToken: string;
     refreshToken: string;
 }
 
 export interface LogingResponceDTO {
     displayUserDTO: DisplayUserDTO;
-    hospitelStaff: HospitelStaff;
+    hospitelStaff?: HospitelStaff;
+    patient?: Patient;
 }
 
 export interface AuthToken {
@@ -36,4 +37,9 @@ export interface HospitelStaff {
     hospitalStaffId: number;
     position: string;
     channels: any[];
+}
+
+export interface Patient{
+    patientId: number,
+    specialArea: string
 }

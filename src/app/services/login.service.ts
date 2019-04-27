@@ -26,12 +26,16 @@ export class LoginService {
               userName: response.displayUserDTO.userName,
               profileUrl: response.displayUserDTO.profileUrl,
               expiration: response.displayUserDTO.expiration,
-              hospitalStaffId: response.hospitelStaff.hospitalStaffId,
-              position: response.hospitelStaff.position,
-              channels: response.hospitelStaff.channels,
               accessToken: response.displayUserDTO.authToken.accessToken,
               refreshToken: response.displayUserDTO.authToken.refreshToken
             };
+            if(response.hospitelStaff){
+              this.loggedInUser.hospitalStaffId= response.hospitelStaff.hospitalStaffId;
+              this.loggedInUser.position= response.hospitelStaff.position;
+              this.loggedInUser.channels= response.hospitelStaff.channels;
+            }else{
+              this.loggedInUser.position = "PATIENT"
+            }
             localStorage.setItem('currentUser',JSON.stringify(this.loggedInUser));
             return this.loggedInUser;
          }

@@ -23,6 +23,10 @@ import { ToastrModule } from "ngx-toastr";
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OwlMomentDateTimeModule } from "ng-pick-datetime-moment";
 import { AuthIntercepter } from './shared/auth.intercepter';
+import { RoleComponent } from './modal/role/role.component';
+import { StaffComponent } from './modal/staff/staff.component';
+import { PatientComponent } from './modal/patient/patient.component';
+import { PatientMainComponent } from './patient-main/patient-main.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { AuthIntercepter } from './shared/auth.intercepter';
     DoctorChannelComponent,
     DrugComponent,
     AppoinmentComponent,
-    ChannelComponent
+    ChannelComponent,
+    RoleComponent,
+    StaffComponent,
+    PatientComponent,
+    PatientMainComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,10 @@ import { AuthIntercepter } from './shared/auth.intercepter';
   entryComponents: [
     DrugComponent,
     AppoinmentComponent,
-    ChannelComponent
+    ChannelComponent,
+    PatientComponent,
+    StaffComponent,
+    RoleComponent
   ]
 })
 export class AppModule { }
