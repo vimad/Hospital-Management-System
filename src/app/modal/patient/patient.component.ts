@@ -55,7 +55,8 @@ export class PatientComponent implements OnInit {
     this.userService.addPatient(form)
       .subscribe(
         (res) => {
-          this.toastr.success("Patient registered succesfully")
+          this.toastr.success("Patient registered succesfully");
+          this.modalRef.hide();
         },
         (error) => {
           this.toastr.error("Patient registration failed");
