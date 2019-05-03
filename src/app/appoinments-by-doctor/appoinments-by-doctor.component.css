@@ -1,0 +1,24 @@
+.appoinment-set{
+    list-style: none;
+}
+.appoinment-body{
+    background-color: rgb(235, 255, 244);
+    border: 0.5px solid rgb(113, 255, 184);
+    border-radius:5px; 
+    padding: 10px;
+    margin-left: -41px;
+    margin-top: 14px;
+}
+.reject-btn{
+    margin-right: 10px;
+    margin-left: 165px;
+}
+.accept-btn{
+    margin-right: 10px;
+}
+.appoinment-time span{
+    margin-left: 15px;
+    font-size: 14px;
+    color: rgb(34, 122, 255);
+    font-family: Roboto;
+}

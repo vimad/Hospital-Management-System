@@ -1,11 +1,152 @@
-<p>
-  doctor works!
-</p>
+<!---Nav bar--->
 
-<button (click)="logOut()">Log out</button>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-primary" >
+    <a class="navbar-brand" href="#" style="font-size:18px;">Hospital Management System </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+     
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a> -->
+          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div> -->
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-success my-2 my-sm-0" (click)="logOut()" type="submit">Log out</button>
+      </form>
+    </div>
+  </nav>
 
-<app-doctor-channel [docotrId] = 'loggedInDoctor.userId'></app-doctor-channel>
 
-<button (click)="openDrugModal()">Drug</button>
+<!---Header wrapper-->
+<div class="wraper">
+  </div>
 
-<button (click)="openChannelModal()">channel</button>
+
+  <!--Body container--->
+  <div class="body-container">
+      <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-5">
+
+                <!---Add drug and add channel commented here-->
+
+                  <!-- <button (click)="openDrugModal()">Drug</button>
+                  <button (click)="openChannelModal()">channel</button> -->
+
+
+                  <div class="Profile-details-wraper">
+                    <div class="row">
+
+                      <!---Doctor image here-->
+                        <div class="col-md-3">
+                          <img  class="profile-image" src="" width="70" height="70">
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="logged-uder-details">
+                              <div class="row">
+                                <div class="col-md-5">
+                                 
+                                  <!---User name --->
+                                  <label class="user-det">User name : <span>Sanoj</span></label>
+                                  <label class="user-det">Position : <span>Doctor</span></label>
+                                </div>
+                                <div class="col-md-7">
+                                    <label class="user-det">Email : <span>Sanoj@gmail.com</span></label>
+                                    <label class="user-det">Appoinments : <span>10</span></label>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <!---Static content-->
+
+                  <div class="notice-wraper">
+                    <div class="row">
+                      <p class="notice-content">If you want to change your details or your informations are incorrect please be kind to contact administrator or Admionstration,Thank you..</p>
+                    </div>
+                  </div>
+
+
+                  <!---View appionments and reports assign by doctor--->
+
+                  <div class="appoinments-and-reports-wrapper">
+                    <div class="row">
+                        <div>
+                            <tabset>
+                              <tab heading="Appoinments" id="tab1"><app-appoinments-by-doctor></app-appoinments-by-doctor></tab>
+                              <tab heading="Reports"><app-reports-by-doctor></app-reports-by-doctor></tab>
+                             
+                            </tabset>
+                          </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+              </div>
+
+              <!--Doctor channel details--->
+              <div class="col-md-7">
+                  <div class="chnnel-details">
+                    <h4 class="header-text">My Channel Details</h4>
+                    <p class="sub-title-text">Channel Update <span>date here</span></p>
+                    <!---Icon-->
+                    <h3 class="header-icon"><i class="fas fa-hospital "></i></h3>
+                  
+                    <!--Filters--->
+                        <div class="filters">
+                            <div class="row">
+                              <P class="filters-styles">Filters : </P>
+                                <span class="badge badge-primary badge-styles">By Date</span>
+                                <span class="badge badge-secondary badge-styles">By Time</span>
+                                <span class="badge badge-success badge-styles">By Limit</span>
+                                <span class="badge badge-danger badge-styles">Appoinmenets</span>
+                                <span class="badge badge-warning badge-styles">Updated</span>
+                                <span class="badge badge-info badge-styles">Edited</span>
+                            </div>
+                        </div>
+
+                      <app-doctor-channel [docotrId] = 'loggedInDoctor.userId'></app-doctor-channel>
+                  </div>
+              </div>
+            </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
