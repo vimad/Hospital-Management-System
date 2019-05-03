@@ -1,13 +1,14 @@
-<!-- <button (click)="getChannelInfo()">Get Channel Info</button> -->
-<div *ngIf="channelInfos?.length > 0; else noChannel">
-  <table >
-    <thead>
-      <th>Channel Date</th>
-      <th>Start Time</th>
-      <th>End Time</th>
-      <th>Patient Limit</th>
-      <th>Number of Appoinments</th>
+<div class="table-wrapper" *ngIf="channelInfos?.length > 0; else noChannel">
+  <table class="table table-hover">
+
+    <thead style="color:#ffff;">
+      <th class="bg-primary">Channel Date</th>
+      <th class="bg-primary">Start Time</th>
+      <th class="bg-primary">End Time</th>
+      <th class="bg-primary">Patient Limit</th>
+      <th class="bg-primary">Number of Appoinments</th>
     </thead>
+
     <tbody>
       <tr *ngFor="let info of channelInfos">
         <td>{{info.channelDate | date}}</td>
@@ -18,6 +19,9 @@
       </tr>
     </tbody>
   </table>
+
+  <pagination [totalItems]="30" class="pagination justify-content-end"></pagination>
+
 </div>
 
 <ng-template #noChannel>

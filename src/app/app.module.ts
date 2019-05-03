@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { TabsModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -27,6 +28,9 @@ import { RoleComponent } from './modal/role/role.component';
 import { StaffComponent } from './modal/staff/staff.component';
 import { PatientComponent } from './modal/patient/patient.component';
 import { PatientMainComponent } from './patient-main/patient-main.component';
+import { ReportsByDoctorComponent } from './reports-by-doctor/reports-by-doctor.component';
+import { AppoinmentsByDoctorComponent } from './appoinments-by-doctor/appoinments-by-doctor.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,9 @@ import { PatientMainComponent } from './patient-main/patient-main.component';
     RoleComponent,
     StaffComponent,
     PatientComponent,
-    PatientMainComponent
+    PatientMainComponent,
+    ReportsByDoctorComponent,
+    AppoinmentsByDoctorComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +62,8 @@ import { PatientMainComponent } from './patient-main/patient-main.component';
     FormsModule,
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
+    PaginationModule.forRoot(),
+    TabsModule.forRoot(),
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     OwlMomentDateTimeModule
