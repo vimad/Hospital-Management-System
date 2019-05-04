@@ -27,15 +27,15 @@ export class RoleComponent implements OnInit {
         roleType: this.role
       }).subscribe(
         (res) => {
-          this.toastr.success("Role added successfully");
+          this.toastr.success("Role added successfully..!!");
         },
         (error) => {
-          this.toastr.error("The Role not added");
+          this.toastr.error("The Role not added..!!");
           this.modalRef.hide();
         }
       )
     }else{
-      this.toastr.error("Please enter a value")
+      this.toastr.error("Please enter a value..!!")
     }
   }
 
