@@ -1,52 +1,125 @@
-<div class="modal-header">
-  <h4 class="modal-title pull-left">Modal</h4>
+<div class="staff-reg-modal">
+<div class="modal-header" style="background-color:rgb(18, 199, 87)">
+  <h5 class="modal-title" style="color:#ffff;">Add Staff Memeber</h5>
+  
   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
 <div class="modal-body">
+      <div class="row model-body-content">
 
-  <label for="name">Name</label>
-  <input type="text" name="name" [(ngModel)]="name">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="name" class="staff-reg-text">Name</label>
+            <input type="text" class="form-control form-style" name="name" [(ngModel)]="name">
+            </div>
+        </div>
 
-  <label for="email">Email</label>
-  <input type="text" name="email" [(ngModel)]="email">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="email" class="staff-reg-text">Email</label>
+            <input type="text" class="form-control form-style" name="email" [(ngModel)]="email">
+            </div>
+        </div>
 
-  <label for="username">User Name</label>
-  <input type="text" name="username" [(ngModel)]="userName">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="username" class="staff-reg-text">User Name</label>
+            <input type="text" class="form-control form-style" name="username" [(ngModel)]="userName">
+            </div>
+        </div>
 
-  <label for="phone">Phone</label>
-  <input type="phone" name="name" [(ngModel)]="mobileNumber">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="phone" class="staff-reg-text">Phone</label>
+            <input type="phone" class="form-control form-style" name="name" [(ngModel)]="mobileNumber">
+            </div>
+        </div>
 
-  <label for="password">Password</label>
-  <input type="text" name="password" [(ngModel)]="password">
 
-  <label for="nic">NIC</label>
-  <input type="text" name="nic" [(ngModel)]="nicNumber">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="password" class="staff-reg-text">Password</label>
+            <input type="text" class="form-control form-style" name="password" [(ngModel)]="password">
+            </div>
+        </div>
+          
 
-  <label>Birth Day</label>
-  <input placeholder="Date:" [(ngModel)]="birthDay" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="date">
-  <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="nic" class="staff-reg-text">NIC</label>
+            <input type="text" class="form-control form-style" name="nic" [(ngModel)]="nicNumber">
+              </div>
+        </div>
 
-  <label for="line1">Line1</label>
-  <input type="text" name="line1" [(ngModel)]="line1">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label class="staff-reg-text">Birth Day</label>
+            <input placeholder="Date:" [(ngModel)]="birthDay" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="date">
+            <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          </div>
+        </div>
 
-  <label for="line2">Line2</label>
-  <input type="text" name="line2" [(ngModel)]="line2">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="line1" class="staff-reg-text">Line1</label>
+            <input type="text" name="line1" class="form-control form-style" [(ngModel)]="line1">
+            </div>
+        </div>
 
-  <label for="city">City</label>
-  <input type="text" name="city" [(ngModel)]="city">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="line2" class="staff-reg-text">Line2</label>
+            <input type="text" name="line2" class="form-control form-style" [(ngModel)]="line2">
+          </div>
+        </div>
 
-  <label for="country">Country</label>
-  <input type="text" name="country" [(ngModel)]="country">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="city" class="staff-reg-text">City</label>
+            <input type="text" name="city" class="form-control form-style" [(ngModel)]="city">
+        </div>
+        </div>
 
-  <label for="po">Position</label>
-  <input type="text" name="po" [(ngModel)]="position">
+        <div class="col-md-3">
 
-  <label for="pic">Profile Pic</label>
-  <input type="file" name="pic" (change) = "onUploadImage($event)">
+            <div class="form-group">
+            <label for="country" class="staff-reg-text">Country</label>
+            <input type="text" class="form-control form-style" name="country" [(ngModel)]="country">
+            </div>
+        </div>
 
-  <button (click)="modalRef.hide()">Cancel</button>
-  <button (click)="save()">Save</button>
+        <div class="col-md-3">
+            <div class="form-group">
+            <label for="po" class="staff-reg-text">Position</label>
+            <input type="text" name="po"  class="form-control form-style" [(ngModel)]="position">
+            </div>
+        
+        </div>
 
+        <div class="col-md-3 inster-image">
+            <div class="form-group">
+            <label for="pic" class="staff-reg-text">Profile Pic</label>
+            <input type="file" name="pic"  (change) = "onUploadImage($event)">
+            </div>
+        </div>
+
+      </div>
+      <hr>
+
+        <div class="row">
+         
+          <div class="col-md-6">
+              <button class="btn btn-outline-success btn-lg btn-block" (click)="modalRef.hide()">Cancel</button>
+          </div>
+          <div class="col-md-6">
+              <button class="btn  btn-success btn-lg btn-block btn-save-staff" (click)="save()">Save</button>
+          </div>
+        </div>
+         
+          
+      
+  </div>
 </div>

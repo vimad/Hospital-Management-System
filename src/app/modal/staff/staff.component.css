@@ -1,0 +1,24 @@
+.modal-title {
+    color: #3B444F;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+}
+.form-style{
+    padding-left: 20px;
+}
+.model-body-content{
+margin-top: 15px;
+margin-bottom: 10px;
+}
+.inster-image{
+    margin-top: 10px;
+}
+.btn-save-staff{
+    background-color:rgb(18, 199, 87) !important;
+}
+.staff-reg-text{
+    color: #727272;
+    font-family: Roboto;
+    font-size: 15px;
+}

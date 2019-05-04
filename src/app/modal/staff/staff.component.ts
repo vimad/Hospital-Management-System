@@ -55,11 +55,11 @@ export class StaffComponent implements OnInit {
     this.userService.addStaff(form)
       .subscribe(
         (res) => {
-          this.toastr.success("Staff member registered succesfully");
+          this.toastr.success("Staff member registered succesfully..!!");
           this.modalRef.hide();
         },
         (error) => {
-          this.toastr.error("Patient registration failed");
+          this.toastr.error("Staff Member registration failed..!!");
         }
       )
 
