@@ -1,15 +1,36 @@
-<div class="modal-header">
-  <h4 class="modal-title pull-left">Modal</h4>
+<div class="modal-header" style="background-color:rgb(18, 199, 87)">
+  <h5 class="modal-title pull-left" style="color:#ffff;">Add Staff Member Role</h5>
   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <form>
-    <label for="role">Role</label>
-    <input type="text" name="role" [(ngModel)]="role">
+  <div class="row" >
+    <div class="col-md-6 role-content">
+        <form>
+            <div class="form-group">
+                <label for="role">Enter new User Role</label>
+                <input type="text" class="form-control form-style" name="role" [(ngModel)]="role">
+            </div>
 
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
-  </form>
+            <div class="row btn-set">
+              <div class="col-md-6">
+                  <button class="btn btn-outline-success btn-lg btn-block" (click)="cancel()" >Cancel</button>
+              </div>
+              <div class="col-md-6">
+                  <button  class="btn  btn-success btn-lg btn-block btn-save-staff" (click)="save()">Save</button>
+              </div>
+         
+         
+            </div>
+        </form>
+
+
+      </div>
+
+      <div class="col-md-6 instruction-set">
+          <label class="instruction">You want to create a <span> role</span>Please enter role name in input field.
+          To enter Role or create role you need a permjissions to it.</label>
+      </div>
+  </div>
 </div>
