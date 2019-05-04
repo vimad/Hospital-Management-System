@@ -5,3 +5,13 @@
 <button (click)="logOut()">Log Out</button>
 
 <button (click)="addPatient()">Add Patient</button>
+
+<label for="doctor">Select Channel From Doctor</label>
+<Select [(ngModel)]="selectedDoctorId" (ngModelChange)="change()" name="doctor" ngDefaultControl>
+  <option [value]="-1">--Select Doctor--</option>
+  <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid" >{{doctor.displayUserDataDTO.name}}</option>
+</Select>
+
+<button (click)="openChannelModal()">channel</button>
+
+<app-doctor-channel [docotrId] = "doctorid"></app-doctor-channel>

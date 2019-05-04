@@ -1,3 +1,5 @@
+import { ChannelInfoDTO } from './channel.dtd';
+
 export interface LoggedUser{
     name: string;
     userId: number;
@@ -41,5 +43,11 @@ export interface HospitelStaff {
 
 export interface Patient{
     patientId: number,
-    specialArea: string
+    displayUserDataDTO: DisplayUserDTO
+}
+
+export interface Doctor{
+    doctorid:number,
+    displayUserDataDTO: DisplayUserDTO,
+    channels: ChannelInfoDTO[]
 }

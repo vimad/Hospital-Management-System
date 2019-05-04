@@ -6,6 +6,9 @@ import * as moment from 'moment';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ChannelService } from 'src/app/services/channel.service';
 import { ToastrService } from 'ngx-toastr';
+import { Doctor } from 'src/app/services/dtd/loggedUser.dtd';
+import { UserService } from 'src/app/services/user.service';
+import { DoctorService } from 'src/app/services/doctor.service';
 
 @Component({
   selector: 'app-channel',
@@ -18,7 +21,8 @@ export class ChannelComponent implements OnInit {
   startTime;
   endTime;
   patientLimit;
-  doctor;
+  selectedDoctorId = "-1"
+  doctorsDetails: Doctor[];
   // saveChannelDto:SaveChannelDTO = {
   //   channelDate:null,
   //   startTime:null,
@@ -28,9 +32,20 @@ export class ChannelComponent implements OnInit {
   // };
 
   constructor(public modalRef:BsModalRef, private channelService:ChannelService, 
-              private toastrService:ToastrService) { }
+              private toastrService:ToastrService, private doctorService:DoctorService) { }
 
   ngOnInit() {
+    this.doctorService.getAll()
+      .subscribe(
+        (res:Doctor[]) => {
+          this.doctorsDetails = res;
+          console.log(this.doctorsDetails);
+          
+        },
+        (error)=>{
+          console.log(error);
+        }
+      );
   }
 
   save(){
@@ -39,7 +54,7 @@ export class ChannelComponent implements OnInit {
       startTime: this.startTime.format('HH:mm:ss'),
       endTime:this.endTime.format('HH:mm:ss'),
       patientLimit: +this.patientLimit,
-      channelDoctorId: +this.doctor
+      channelDoctorId: +this.selectedDoctorId
     }
 
     this.channelService.saveChannelInfo(saveChannelDto)

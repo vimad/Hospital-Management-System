@@ -10,10 +10,10 @@ export class DoctorService{
     constructor(private httpClient:HttpClient){}
 
     getOne(id){
-        this.httpClient.get(`${BASE_URL}/doctor/doctor-service?doctor-id=${id}`);
+        return this.httpClient.get(`${BASE_URL}/doctor/doctor-service?doctor-id=${id}`);
     }
 
     getAll(){
-        this.httpClient.get(`${BASE_URL}/doctor/all-doctor-service`);
+        return this.httpClient.get(`${BASE_URL}/doctor/all-doctor-service`);
     }
 }

@@ -37,11 +37,4 @@ export class DoctorComponent implements OnInit {
       }})
   }
 
-  openChannelModal(){
-    this.bsModalRef = this.modalService.show(ChannelComponent,{
-      initialState:{
-        parent: this
-      }})
-  }
-
 }
