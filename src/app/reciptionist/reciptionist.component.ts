@@ -32,7 +32,7 @@ export class ReciptionistComponent implements OnInit {
       .subscribe(
         (res:Doctor[]) => {
           this.doctorsDetails = res;
-          console.log(this.doctorsDetails);
+          // console.log(this.doctorsDetails);
           
         },
         (error)=>{

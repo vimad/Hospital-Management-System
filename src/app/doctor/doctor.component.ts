@@ -8,6 +8,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { DrugComponent } from '../modal/drug/drug.component';
 import { initialState } from 'ngx-bootstrap/timepicker/reducer/timepicker.reducer';
 import { ChannelComponent } from '../modal/channel/channel.component';
+import { DoctorService } from '../services/doctor.service';
 
 @Component({
   selector: 'app-doctor',
@@ -20,7 +21,7 @@ export class DoctorComponent implements OnInit {
   bsModalRef:BsModalRef;
 
   constructor(private channelService:ChannelService, private loginService:LoginService,
-    private modalService:BsModalService) { }
+    private modalService:BsModalService, private doctorService:DoctorService) { }
 
   ngOnInit() {
     this.loggedInDoctor = JSON.parse(localStorage.getItem('currentUser'));

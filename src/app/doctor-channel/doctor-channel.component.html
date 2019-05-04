@@ -7,6 +7,7 @@
       <th class="bg-primary">End Time</th>
       <th class="bg-primary">Patient Limit</th>
       <th class="bg-primary">Number of Appoinments</th>
+      <th class="bg-primary" *ngIf="isPatient">Add Appoinment</th>
     </thead>
 
     <tbody>
@@ -16,6 +17,14 @@
         <td>{{info.endTime}}</td>
         <td>{{info.patientLimit}}</td>
         <td>{{info.appoinments.length}}</td>
+        <td *ngIf="isPatient">
+          <label class="example-input-wrapper">
+            Time:
+            <input placeholder="Time:" [(ngModel)]="info.appoinmentTime" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="et" #val>
+            <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
+          </label>
+          <button (click)="addAppoinment(info)">Add</button>
+        </td>
       </tr>
     </tbody>
   </table>

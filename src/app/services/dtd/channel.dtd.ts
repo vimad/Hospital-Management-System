@@ -13,4 +13,5 @@ export interface ChannelInfoDTO{
     patientLimit:number;
     appoinments:any[];
     id:number;
+    appoinmentTime?:any;
 }

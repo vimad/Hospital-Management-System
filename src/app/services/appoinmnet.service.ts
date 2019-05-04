@@ -9,7 +9,7 @@ export class AppoinmentService{
     constructor(private httpClient:HttpClient){}
     
     saveAppoinment(request){
-        this.httpClient.post(`${BASE_URL}/appoinment/add-Appoinment`, request);
+        return this.httpClient.post(`${BASE_URL}/appoinment/add-Appoinment`, request);
     }
 
     updateAppoinment(id, request){

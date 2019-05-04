@@ -59,7 +59,7 @@
 
                       <!---Doctor image here-->
                         <div class="col-md-3">
-                          <img  class="profile-image" src="" width="70" height="70">
+                          <img  class="profile-image" [src]="loggedInDoctor.profileUrl" width="70" height="70">
                         </div>
 
                         <div class="col-md-9">
@@ -68,11 +68,11 @@
                                 <div class="col-md-5">
                                  
                                   <!---User name --->
-                                  <label class="user-det">User name : <span>Sanoj</span></label>
+                                  <label class="user-det">User name : <span>{{loggedInDoctor.name}}</span></label>
                                   <label class="user-det">Position : <span>Doctor</span></label>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="user-det">Email : <span>Sanoj@gmail.com</span></label>
+                                    <label class="user-det">Email : <span>{{loggedInDoctor.email}}</span></label>
                                     <label class="user-det">Appoinments : <span>10</span></label>
                                 </div>
                               </div>
