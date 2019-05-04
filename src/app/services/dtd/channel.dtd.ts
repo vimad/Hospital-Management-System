@@ -14,4 +14,5 @@ export interface ChannelInfoDTO{
     appoinments:any[];
     id:number;
     appoinmentTime?:any;
+    reserved?:boolean;
 }

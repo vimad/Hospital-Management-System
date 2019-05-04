@@ -23,6 +23,8 @@ export class ChannelComponent implements OnInit {
   patientLimit;
   selectedDoctorId = "-1"
   doctorsDetails: Doctor[];
+  isUpdate = false;
+  channelId:number;
   // saveChannelDto:SaveChannelDTO = {
   //   channelDate:null,
   //   startTime:null,
@@ -35,6 +37,7 @@ export class ChannelComponent implements OnInit {
               private toastrService:ToastrService, private doctorService:DoctorService) { }
 
   ngOnInit() {
+    console.log(this.selectedDoctorId);
     this.doctorService.getAll()
       .subscribe(
         (res:Doctor[]) => {
@@ -57,6 +60,20 @@ export class ChannelComponent implements OnInit {
       channelDoctorId: +this.selectedDoctorId
     }
 
+    if(this.isUpdate){
+      this.channelService.updateChannelInfo(this.channelId, saveChannelDto)
+        .subscribe(
+          (res) => {
+            this.toastrService.success("success");
+            this.modalRef.hide();
+          },
+          (error) => {
+            this.toastrService.error(error.message);
+          }
+        );
+      return;
+    }
+
     this.channelService.saveChannelInfo(saveChannelDto)
       .subscribe(
         (res) => {
@@ -74,5 +91,13 @@ export class ChannelComponent implements OnInit {
     // console.log(s);
     // console.log(this.endTime);
   }
+  
+  cancel(){
+    this.modalRef.hide();
+  }
 
+  customTrackBy(index, doctor){
+    console.log("here");
+    return this.doctorsDetails[+this.selectedDoctorId];
+  }
 }

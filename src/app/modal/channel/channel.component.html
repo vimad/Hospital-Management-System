@@ -27,8 +27,8 @@
 
     <label for="doctor">Doctor</label>
     <Select [(ngModel)]="selectedDoctorId" name="doctor" ngDefaultControl >
-      <option [value]="">--Select Doctor--</option>
-      <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid">{{doctor.displayUserDataDTO.name}}</option>
+      <option [value]="-1">--Select Doctor--</option>
+      <option *ngFor="let doctor of doctorsDetails;" [value]="doctor.doctorid">{{doctor.displayUserDataDTO.name}}</option>
     </Select>
 
     <button (click)="cancel()">Cancel</button>

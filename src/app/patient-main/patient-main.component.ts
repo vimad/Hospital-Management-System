@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { DoctorService } from '../services/doctor.service';
-import { Doctor } from '../services/dtd/loggedUser.dtd';
+import { Doctor, LoggedUser } from '../services/dtd/loggedUser.dtd';
 
 @Component({
   selector: 'app-patient-main',
@@ -10,6 +10,8 @@ import { Doctor } from '../services/dtd/loggedUser.dtd';
 })
 export class PatientMainComponent implements OnInit {
 
+  loggedPatient:LoggedUser;
+
   doctorsDetails: Doctor[];
   selectedDoctorId = "1";
   doctorid = 1;
@@ -17,6 +19,7 @@ export class PatientMainComponent implements OnInit {
   constructor(private loginService:LoginService, private doctorService:DoctorService) { }
 
   ngOnInit() {
+    this.loggedPatient = JSON.parse(localStorage.getItem('currentUser'))
     this.doctorService.getAll()
       .subscribe(
         (res:Doctor[]) => {

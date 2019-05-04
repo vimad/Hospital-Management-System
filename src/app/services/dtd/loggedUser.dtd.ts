@@ -10,6 +10,8 @@ export interface LoggedUser{
     hospitalStaffId?: number;
     position?: string;
     channels?: any[];
+    staffId?: number;
+    patientId?: number;
     accessToken: string;
     refreshToken: string;
 }

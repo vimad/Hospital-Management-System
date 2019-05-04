@@ -27,7 +27,9 @@ export class LoginService {
               profileUrl: response.displayUserDTO.profileUrl,
               expiration: response.displayUserDTO.expiration,
               accessToken: response.displayUserDTO.authToken.accessToken,
-              refreshToken: response.displayUserDTO.authToken.refreshToken
+              refreshToken: response.displayUserDTO.authToken.refreshToken,
+              staffId: response.hospitelStaff? response.hospitelStaff.hospitalStaffId : null, 
+              patientId: response.patient? response.patient.patientId : null
             };
             if(response.hospitelStaff){
               this.loggedInUser.hospitalStaffId= response.hospitelStaff.hospitalStaffId;

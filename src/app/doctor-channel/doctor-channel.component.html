@@ -8,6 +8,7 @@
       <th class="bg-primary">Patient Limit</th>
       <th class="bg-primary">Number of Appoinments</th>
       <th class="bg-primary" *ngIf="isPatient">Add Appoinment</th>
+      <th class="bg-primary" *ngIf="isReciptionist">Change</th>
     </thead>
 
     <tbody>
@@ -18,12 +19,23 @@
         <td>{{info.patientLimit}}</td>
         <td>{{info.appoinments.length}}</td>
         <td *ngIf="isPatient">
-          <label class="example-input-wrapper">
-            Time:
-            <input placeholder="Time:" [(ngModel)]="info.appoinmentTime" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="et" #val>
-            <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
-          </label>
-          <button (click)="addAppoinment(info)">Add</button>
+          <div *ngIf="!info.reserved; else alreadyDone">
+            <label class="example-input-wrapper">
+              Time:
+              <input placeholder="Time:" [(ngModel)]="info.appoinmentTime" [owlDateTimeTrigger]="dt3"
+                [owlDateTime]="dt3" name="et" #val>
+              <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
+            </label>
+            <button (click)="addAppoinment(info)">Add</button>
+          </div>
+          <ng-template #alreadyDone>
+            <div>
+              <span>Already Added an Appoinment</span>
+            </div>
+          </ng-template>
+        </td>
+        <td *ngIf="isReciptionist">
+          <button (click)="edit(info)">Edit</button>
         </td>
       </tr>
     </tbody>
