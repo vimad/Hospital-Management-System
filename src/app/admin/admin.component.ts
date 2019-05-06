@@ -3,6 +3,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { RoleComponent } from '../modal/role/role.component';
 import { LoginService } from '../services/login.service';
 import { StaffComponent } from '../modal/staff/staff.component';
+import { Doctor } from '../services/dtd/loggedUser.dtd';
+import { DoctorService } from '../services/doctor.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,10 +14,20 @@ import { StaffComponent } from '../modal/staff/staff.component';
 export class AdminComponent implements OnInit {
 
   modalRef:BsModalRef;
+
+  doctors:Doctor[];
+
   constructor(private modalService:BsModalService, 
-      private loginService:LoginService) { }
+      private loginService:LoginService, private doctorService:DoctorService) { }
 
   ngOnInit() {
+    this.doctorService.getAll()
+      .subscribe(
+        (res:Doctor[]) => {
+          this.doctors = res;
+        },
+        (error) => console.log(error)
+      );
   }
 
   addRole(){

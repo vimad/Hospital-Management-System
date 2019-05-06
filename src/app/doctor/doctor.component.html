@@ -50,8 +50,8 @@
 
                 <!---Add drug and add channel commented here-->
 
-                  <!-- <button (click)="openDrugModal()">Drug</button>
-                  <button (click)="openChannelModal()">channel</button> -->
+                  <button (click)="openDrugModal()">Drug</button>
+                  <!-- <button (click)="openChannelModal()">channel</button> -->
 
 
                   <div class="Profile-details-wraper">
@@ -97,7 +97,7 @@
                     <div class="row">
                         <div>
                             <tabset>
-                              <tab heading="Appoinments" id="tab1"><app-appoinments-by-doctor></app-appoinments-by-doctor></tab>
+                              <tab heading="Appoinments" id="tab1"><app-appoinments-by-doctor [doctorId] = 'loggedInDoctor.staffId'></app-appoinments-by-doctor></tab>
                               <tab heading="Reports"><app-reports-by-doctor></app-reports-by-doctor></tab>
                              
                             </tabset>

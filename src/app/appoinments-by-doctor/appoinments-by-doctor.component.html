@@ -1,47 +1,10 @@
 <!---Get appoinment details by doctor id--->
 <div class="appoinment details">
     <ul class="appoinment-set">
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
+        <li class="appoinment-body" *ngFor="let app of appoinments">
+            <label class="appoinment-time">You have an Appoinment at <span>{{app.appoinentTime}}</span></label> 
             <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
             <button class="btn btn-success btn-sm accept-btn">Accept</button> 
         </li>
-
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
-            <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
-            <button class="btn btn-success btn-sm accept-btn">Accept</button> 
-        </li>
-
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
-            <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
-            <button class="btn btn-success btn-sm accept-btn">Accept</button> 
-        </li>
-
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
-            <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
-            <button class="btn btn-success btn-sm accept-btn">Accept</button> 
-        </li>
-
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
-            <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
-            <button class="btn btn-success btn-sm accept-btn">Accept</button> 
-        </li>
-
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
-            <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
-            <button class="btn btn-success btn-sm accept-btn">Accept</button> 
-        </li>
-
-        <li class="appoinment-body">
-            <label class="appoinment-time">You have an Appoinment at <span>14:42:06</span></label> 
-            <button class="btn btn-danger btn-sm reject-btn"> Reject</button> 
-            <button class="btn btn-success btn-sm accept-btn">Accept</button> 
-        </li>
-
     </ul>
   </div>

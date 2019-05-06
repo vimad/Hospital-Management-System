@@ -2,7 +2,6 @@
   <table class="table table-hover">
 
     <thead style="color:#ffff;">
-      <th class="bg-primary">Doctor name</th>
       <th class="bg-primary">Channel Date</th>
       <th class="bg-primary">Start Time</th>
       <th class="bg-primary">End Time</th>
@@ -14,7 +13,6 @@
 
     <tbody>
       <tr *ngFor="let info of channelInfos">
-        <td>Sanoj</td>
         <td>{{info.channelDate | date}}</td>
         <td>{{info.startTime}}</td>
         <td>{{info.endTime}}</td>

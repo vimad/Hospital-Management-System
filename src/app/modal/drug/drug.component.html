@@ -7,10 +7,30 @@
 <div class="modal-body">
   <form>
     <label for="drugName">Drug name</label>
-    <input type="text" name="drugName">
-    <div>
-      
+    <input type="text" name="drugName" [(ngModel)]="drugName">
+
+    <div *ngFor="let brandName of drugBrandNames">
+      {{brandName}}
     </div>
+    <input type="text" [(ngModel)]="drugBrandName" name="bn"> <button (click)="addBrandName()">Add drug brand name</button>
+
+    <div *ngFor="let sideEffect of drugSideEffects">
+      {{sideEffect}}
+    </div>
+    <input type="text" [(ngModel)]="drugSideEffect" name="se"> <button (click)="addSideEffect()">Add side effect</button>
+
+    <label for="drugManufacturer">Drug manufacturer</label>
+    <input type="text" name="drugManufacturer" [(ngModel)]="drugManufacturer">
+
+    <label for="drugDescription">Drug description</label>
+    <input type="text" name="drugDescription" [(ngModel)]="drugDescription">
+
+    <label for="drugExpireDate">Drug expire date</label>
+    <input placeholder="Date:" [(ngModel)]="drugExpireDate" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="drugExpireDate">
+    <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+
+    <label for="drugQuantity">Drug quantity</label>
+    <input type="text" name="drugQuantity" [(ngModel)]="drugQuantity">
 
     <button (click)="cancel()">Cancel</button>
     <button (click)="save()">Save</button>

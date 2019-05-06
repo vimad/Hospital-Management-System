@@ -7,7 +7,7 @@ export interface Patients {
 export interface HibernateLazyInitializer {
 }
 
-export interface RootObject {
+export interface Appoinment {
     appoinmentId: number;
     appoinentTime: string;
     patients: Patients;

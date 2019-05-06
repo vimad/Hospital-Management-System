@@ -79,7 +79,7 @@
       <div class="row">
         <div class="col-md-8">
           <div class="doc-image">
-          <img class="profile-image" [src]="" width="300" height="300" style="border-radius:5px;">
+          <img class="profile-image" [src]="selectedDoctor.displayUserDataDTO.profileUrl" width="300" height="300" style="border-radius:5px;">
           </div>
         </div>
         <div class="col-md-4">
@@ -91,12 +91,12 @@
         <div class="row doc-det">
 
               <div class="col-md-6">
-                <label class="doc-name">Doctor name : </label><span>Sanoj dilshan</span><br>
-                <label class="doc-email">Doctor Email : </label><span>Sanoj@gmail.com</span>
+                <label class="doc-name">Doctor name : </label><span>{{selectedDoctor.displayUserDataDTO.name}}</span><br>
+                <label class="doc-email">Doctor Email : </label><span>{{selectedDoctor.displayUserDataDTO.email}}</span>
               </div>
 
               <div class="col-md-6">
-                  <label class="doc-name">Position: </label><span>Sanoj dilshan</span><br>
+                  <label class="doc-name">Position: </label><span>Doctor</span><br>
                   <label class="doc-email">Specialize area : </label><span>Eye Specialist</span>
               </div>
         </div>
@@ -116,12 +116,7 @@
         </Select> -->
 
         <select class="form-control" [(ngModel)]="selectedDoctorId" (ngModelChange)="change()" name="doctor"  ngDefaultControl  id="exampleFormControlSelect1">
-            <option [value]="-1">Select Doctor</option>
             <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid" >{{doctor.displayUserDataDTO.name}}</option>
-            <!-- <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option> -->
           </select>
 
         </div>

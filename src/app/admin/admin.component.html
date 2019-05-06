@@ -42,3 +42,19 @@
 <button (click)="addRole()">Add Role</button>
 
 <button (click)="addStaff()">Add Staff Member</button>
+
+<p>Doctor details</p>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>User Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors">
+      <td>{{doctor.displayUserDataDTO.name}}</td>
+      <td>{{doctor.displayUserDataDTO.userName}}</td>
+      <td>{{doctor.displayUserDataDTO.email}}</td>
+    </tr>
+  </tbody>
+</table>

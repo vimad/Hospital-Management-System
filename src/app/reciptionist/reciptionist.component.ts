@@ -16,6 +16,7 @@ export class ReciptionistComponent implements OnInit {
   modalRef:BsModalRef
 
   doctorsDetails: Doctor[];
+  selectedDoctor: Doctor;
 
   selectedDoctorId = "-1";
   doctorid = -1;
@@ -25,6 +26,7 @@ export class ReciptionistComponent implements OnInit {
 
   change(){
     this.doctorid = parseInt(this.selectedDoctorId);
+    this.selectedDoctor = this.doctorsDetails.find(item=> item.doctorid === this.doctorid);
   }
 
   ngOnInit() {
@@ -32,6 +34,9 @@ export class ReciptionistComponent implements OnInit {
       .subscribe(
         (res:Doctor[]) => {
           this.doctorsDetails = res;
+          this.selectedDoctor = this.doctorsDetails[0];
+          this.selectedDoctorId = this.selectedDoctor.doctorid.toString();
+          this.doctorid = this.selectedDoctor.doctorid;
           // console.log(this.doctorsDetails);
           
         },
@@ -39,6 +44,8 @@ export class ReciptionistComponent implements OnInit {
           console.log(error);
         }
       );
+    
+    console.log(this.selectedDoctor);
   }
 
   addPatient(){
