@@ -2,17 +2,19 @@
   <table class="table table-hover">
 
     <thead style="color:#ffff;">
+      <th class="bg-primary">Doctor name</th>
       <th class="bg-primary">Channel Date</th>
       <th class="bg-primary">Start Time</th>
       <th class="bg-primary">End Time</th>
       <th class="bg-primary">Patient Limit</th>
-      <th class="bg-primary">Number of Appoinments</th>
+      <th class="bg-primary">Appoinments</th>
       <th class="bg-primary" *ngIf="isPatient">Add Appoinment</th>
       <th class="bg-primary" *ngIf="isReciptionist">Change</th>
     </thead>
 
     <tbody>
       <tr *ngFor="let info of channelInfos">
+        <td>Sanoj</td>
         <td>{{info.channelDate | date}}</td>
         <td>{{info.startTime}}</td>
         <td>{{info.endTime}}</td>
@@ -35,7 +37,7 @@
           </ng-template>
         </td>
         <td *ngIf="isReciptionist">
-          <button (click)="edit(info)">Edit</button>
+          <button class="btn btn-success" (click)="edit(info)">Edit</button>
         </td>
       </tr>
     </tbody>

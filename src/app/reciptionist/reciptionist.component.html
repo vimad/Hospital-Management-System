@@ -37,15 +37,109 @@
 </nav>
 
 
+<!---Receptionsit view styling--->
+<div class="reception-view">
+  <div class="row">
 
-<button (click)="addPatient()">Add Patient</button>
+          <div class="col-md-3">
+              <button (click)="addPatient()" class="btn  btn-success add-new-patinet-btn">
+                  <i class="fas fa-user-injured icon-first-styl"></i>
+                Add new <span>Patient</span>
+                <i class="fas fa-user-injured sec-icon"></i></button>
+          </div>
 
-<label for="doctor">Select Channel From Doctor</label>
-<Select [(ngModel)]="selectedDoctorId" (ngModelChange)="change()" name="doctor" ngDefaultControl>
-  <option [value]="-1">--Select Doctor--</option>
-  <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid" >{{doctor.displayUserDataDTO.name}}</option>
-</Select>
+          <div class="col-md-3">
+              <button (click)="openChannelModal()" class="btn  btn-info create-new-channel-btn1" >
+                  <i class="far fa-plus-square icon-first-style"></i>
+                  Create new <span>channel</span>
+                  <i class="far fa-plus-square sec-icon"></i></button>
+          </div>
 
-<button (click)="openChannelModal()">channel</button>
+          <div class="col-md-3">
+              <button (click)="openChannelModal()" class="btn  btn-outline-dark create-new-channel-btn" >
+             <i class="far fa-user-circle icon-first-style"></i>
+                  View all <span>Patinets</span>
+                  <i class="far fa-plus-square sec-icon"></i></button>
+          </div>
 
-<app-doctor-channel [docotrId] = "doctorid" [isReciptionist]="true"></app-doctor-channel>
+          <div class="col-md-3">
+              <button (click)="openChannelModal()" class="btn  btn-outline-dark create-new-channel-btn" >
+                  <i class="far fa-plus-square icon-first-style"></i>
+                  Create channel
+                  <i class="far fa-plus-square sec-icon"></i></button>
+          </div>
+
+ 
+
+
+
+<!----Selected doctor details-->
+
+    <div class="col-md-5 doc-informataions-sec">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="doc-image">
+          <img class="profile-image" [src]="" width="300" height="300" style="border-radius:5px;">
+          </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary btn-lg btn-block">View Appoinments</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">View Appoinments</button>
+        </div>
+      </div>
+
+        <div class="row doc-det">
+
+              <div class="col-md-6">
+                <label class="doc-name">Doctor name : </label><span>Sanoj dilshan</span><br>
+                <label class="doc-email">Doctor Email : </label><span>Sanoj@gmail.com</span>
+              </div>
+
+              <div class="col-md-6">
+                  <label class="doc-name">Position: </label><span>Sanoj dilshan</span><br>
+                  <label class="doc-email">Specialize area : </label><span>Eye Specialist</span>
+              </div>
+        </div>
+        
+   
+    </div>
+
+
+
+    <div class="col-md-7 select-doctor-sec">
+
+      <div class="selec-doc">
+        <label for="doctor" class="doc-select">Select Channel From Doctor :</label>
+        <!-- <Select  >
+          <option [value]="-1">--Select Doctor--</option>
+          <option >{{doctor.displayUserDataDTO.name}}</option>
+        </Select> -->
+
+        <select class="form-control" [(ngModel)]="selectedDoctorId" (ngModelChange)="change()" name="doctor"  ngDefaultControl  id="exampleFormControlSelect1">
+            <option [value]="-1">Select Doctor</option>
+            <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid" >{{doctor.displayUserDataDTO.name}}</option>
+            <!-- <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option> -->
+          </select>
+
+        </div>
+
+        <div class="doc-table">
+        <app-doctor-channel [docotrId] = "doctorid" [isReciptionist]="true"></app-doctor-channel>
+          </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

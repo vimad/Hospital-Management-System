@@ -1,37 +1,76 @@
-<div class="modal-header">
-  <h4 class="modal-title pull-left">Modal</h4>
+<div class="create-new--modal">
+<div class="modal-header" style="background-color:rgb(18, 199, 87)">
+  <h4 class="modal-title pull-left" style="color:#ffff;">Create channel</h4>
   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
   <form>
-    <label>Channel Date</label>
-    <input placeholder="Date:" [(ngModel)]="channelDate" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="date">
-    <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+    <div class="row">
+      <div class="col-md-4 top-section">
+          <div class="form-group">
+          <label>Channel Date</label>
+          <input placeholder="Date:" class="form-control form-style" [(ngModel)]="channelDate" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="date">
+          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          </div>
+      </div>
+      <div class="col-md-4 top-section">
+          <div class="form-group">
+          <label class="example-input-wrapper">
+              Start Time: </label>
+              <input placeholder="Time:" class="form-control form-style" [(ngModel)]="startTime" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="st">
+              <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
+           
+            </div>
+      </div>
+      <div class="col-md-4 top-section">
+          <div class="form-group">
+          <label class="example-input-wrapper">
+              End Time:   </label>
+              <input placeholder="Time:" class="form-control form-style" [(ngModel)]="endTime" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="et">
+              <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
+         
+            </div>
+      </div>
 
-    <label class="example-input-wrapper">
-      Start Time:
-      <input placeholder="Time:" [(ngModel)]="startTime" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="st">
-      <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
-    </label>
+      <!-- <div class="row"> -->
+        <div class="col-md-4">
+            <div class="form-group">
+            <label for="limit">Patient Limit</label>
+            <input type="text" class="form-control form-style" [(ngModel)]="patientLimit" name="pl">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group select-doctor">
+            <label for="doctor"> Select Doctor</label>
+            <Select [(ngModel)]="selectedDoctorId" name="doctor" ngDefaultControl >
+              <option [value]="-1">--Select Doctor--</option>
+              <option *ngFor="let doctor of doctorsDetails;" [value]="doctor.doctorid">{{doctor.displayUserDataDTO.name}}</option>
+            </Select>
+          </div>
+        </div>
 
-    <label class="example-input-wrapper">
-      End Time:
-      <input placeholder="Time:" [(ngModel)]="endTime" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="et">
-      <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
-    </label>
+      <!-- </div> -->
+      
 
-    <label for="limit">Patient Limit</label>
-    <input type="text" [(ngModel)]="patientLimit" name="pl">
+      
+      
 
-    <label for="doctor">Doctor</label>
-    <Select [(ngModel)]="selectedDoctorId" name="doctor" ngDefaultControl >
-      <option [value]="-1">--Select Doctor--</option>
-      <option *ngFor="let doctor of doctorsDetails;" [value]="doctor.doctorid">{{doctor.displayUserDataDTO.name}}</option>
-    </Select>
+     
+        <!---Button set--->
+           
+                  <div class="col-md-6 btn-sset" >
+                      <button (click)="cancel()" class="btn btn-outline-success btn-lg btn-block">Cancel</button>
+                  </div>
 
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
+                  <div class="col-md-6 btn-sset">
+                      <button (click)="save()" class="btn  btn-success btn-lg btn-block btn-save-staff">Save</button>
+                  </div>
+          
+
+
+      </div>
   </form>
+</div>
 </div>
