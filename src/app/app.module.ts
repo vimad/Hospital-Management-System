@@ -17,7 +17,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { DrugComponent } from './modal/drug/drug.component';
 import { AppoinmentComponent } from './modal/appoinment/appoinment.component';
 import { ChannelComponent } from './modal/channel/channel.component';
-
+import { BsDatepickerModule } from 'ngx-bootstrap';
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
@@ -63,6 +63,7 @@ import { AppoinmentsByDoctorComponent } from './appoinments-by-doctor/appoinment
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     PaginationModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
