@@ -10,7 +10,7 @@ export class ReportService{
     constructor(private httpClient:HttpClient){}
 
     saveMedicalReport(request){
-        this.httpClient.post(`${BASE_URL}/medical-report/save-medical-report`,request);
+        return this.httpClient.post(`${BASE_URL}/medical-report/save-medical-report`,request);
     }
 
     saveBloodReport(){

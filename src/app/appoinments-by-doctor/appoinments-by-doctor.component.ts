@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ChannelService } from '../services/channel.service';
 import { ChannelInfoDTO } from '../services/dtd/channel.dtd';
 import { Appoinment } from '../services/dtd/appoinment.dtd';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { ReportComponent } from '../modal/report/report.component';
 
 @Component({
   selector: 'app-appoinments-by-doctor',
@@ -12,11 +14,13 @@ export class AppoinmentsByDoctorComponent implements OnInit {
 
   @Input() doctorId;
 
+  modalRef:BsModalRef;
+
   channelInfos:ChannelInfoDTO[];
 
   appoinments:Appoinment[] = [];
 
-  constructor(private channelService: ChannelService) { }
+  constructor(private channelService: ChannelService, private modalService:BsModalService) { }
 
   ngOnInit() {
     if(this.doctorId != null){
@@ -45,6 +49,19 @@ export class AppoinmentsByDoctorComponent implements OnInit {
         }
       )
     }
+  }
+
+  openReportMadal(app){
+    this.modalRef = this.modalService.show(
+      ReportComponent,
+      {
+        initialState: {
+          appoinmentId: app.appoinmentId,
+          patientId: app.patients.patientId,
+          doctorId: this.doctorId
+        }
+      }
+    );
   }
 
 

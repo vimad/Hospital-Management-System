@@ -4,6 +4,7 @@ import { LoginService } from '../services/login.service';
 import { LogingResponceDTO, LoggedUser } from '../services/dtd/loggedUser.dtd';
 import { resolveComponentResources } from '@angular/core/src/metadata/resource_loading';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loggedInUser:LoggedUser;
 
-  constructor(private fb:FormBuilder, private loginService:LoginService, private router:Router) { }
+  constructor(private fb:FormBuilder, private loginService:LoginService, private router:Router,
+                private toastr:ToastrService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -33,6 +35,9 @@ export class LoginComponent implements OnInit {
       (user:LoggedUser) =>{
         this.loggedInUser = user;
         this.navigateToUser();
+      },
+      (error) => {
+        this.toastr.error("Invalid User Name or Password");
       }
     );
   }

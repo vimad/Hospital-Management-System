@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Modal</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <label for="doctorStatement">Doctor statement</label>
+    <input type="text" name="doctorStatement" [(ngModel)]="doctorStatement">
+
+    <label for="drugReport">Drug report</label>
+    <input type="text" name="drugReport" [(ngModel)]="drugReport">
+
+    <div *ngFor="let drugDetail of selectedDrugs">
+      {{drugDetail.drugName}} <span (click)=removeDrug(drugDetail)> remove</span>
+    </div>
+    <input type="text" [(ngModel)]="drug" name="se" (ngModelChange)="change()"> <button (click)="addDrug()" autocomplete="off">Add Drug</button>
+    <div *ngFor="let drugDetail of tempDrugs">
+      <span (click)="selectDrug(drugDetail)">{{drugDetail.drugName}}</span>
+    </div>
+
+    <button (click)="cancel()">Cancel</button>
+    <button (click)="save()">Save</button>
+  </form>
+</div>
