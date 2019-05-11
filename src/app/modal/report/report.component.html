@@ -1,26 +1,59 @@
-<div class="modal-header">
-  <h4 class="modal-title pull-left">Modal</h4>
+<div class="modal-header" style="background-color:rgb(6, 190, 61)">
+  <h4 class="modal-title pull-left" style="color:#ffff;">Add new Report</h4>
   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
   <form>
-    <label for="doctorStatement">Doctor statement</label>
-    <input type="text" name="doctorStatement" [(ngModel)]="doctorStatement">
+    <div class="row repoert-details">
 
-    <label for="drugReport">Drug report</label>
-    <input type="text" name="drugReport" [(ngModel)]="drugReport">
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="doctorStatement">Doctor statement</label>
+              <textarea class="form-control" name="doctorStatement"  [(ngModel)]="doctorStatement" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+         </div>
 
-    <div *ngFor="let drugDetail of selectedDrugs">
-      {{drugDetail.drugName}} <span (click)=removeDrug(drugDetail)> remove</span>
+         <div class="col-md-6">
+            <div class="form-group">
+              <label for="drugReport">Drug report</label>
+              <textarea class="form-control" name="drugReport" [(ngModel)]="drugReport" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="drugReport">Add drugs to report</label>
+
+
+        <input type="text" [(ngModel)]="drug" name="se" class="form-control form-style" (ngModelChange)="change()"> <button (click)="addDrug()" class="btn btn-warning" style="margin-top:9px;"  autocomplete="off">Add Drug</button>
+        <div *ngFor="let drugDetail of tempDrugs">
+          <span (click)="selectDrug(drugDetail)">{{drugDetail.drugName}}</span>
+        </div>
+    </div></div>
+    <div class="col-md-6">
+      <div class="row">
+          <div class="col-md-2">
+        <div *ngFor="let drugDetail of selectedDrugs">
+            <span class="badge badge-pill badge-success" style="display:inline" style="padding:8px; margin-bottom: 5px">{{drugDetail.drugName}}  <span (click)=removeDrug(drugDetail) style="cursor: pointer; margin-left: 5px;">&times;</span></span> 
+          </div></div></div>
     </div>
-    <input type="text" [(ngModel)]="drug" name="se" (ngModelChange)="change()"> <button (click)="addDrug()" autocomplete="off">Add Drug</button>
-    <div *ngFor="let drugDetail of tempDrugs">
-      <span (click)="selectDrug(drugDetail)">{{drugDetail.drugName}}</span>
-    </div>
+  
+  
+  </div>
 
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
+  <div class="row  btn-set">
+    <div class="col-md-6">
+
+        <button (click)="cancel()" class="btn btn-outline-success btn-lg btn-block">Cancel</button>
+    </div>
+    <div class="col-md-6">
+        <button (click)="save()" class="btn btn-success btn-lg btn-block">Save</button>
+    </div>
+    
+   
+  </div>
   </form>
 </div>

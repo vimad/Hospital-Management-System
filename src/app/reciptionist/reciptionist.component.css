@@ -70,7 +70,7 @@ left: 10px;
 }
 .doc-image{
     margin-left: 30px;
-    margin-top: 40px;
+    
 }
 .doc-informataions-sec{
     border: 1px solid rgba(76, 159, 255, 0.267);
@@ -103,4 +103,37 @@ left: 10px;
 }
 .doc-email span{
     font-size: 13px;
+}
+.main-side-btn{
+    position: relative;
+    right: 1px;
+    padding: 25px;
+    
+}
+.main-side-btn-2{
+    top: 15px;
+    position: relative;
+    right: 1px;
+    padding: 25px;
+}
+.doc-details{
+    color: #3B444F;
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: 600;
+    position: relative;
+    left: 5%;
+    
+}
+.sub-cat{
+    color: #547CA2;
+    font-family: Roboto;
+    font-size: 14px;
+    position: relative;
+    left: 5%;
+    top: -7px;
+}
+.hr-style{
+    position: relative;
+    top: -1%;
 }
