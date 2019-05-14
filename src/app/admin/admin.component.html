@@ -44,14 +44,16 @@
 <button (click)="addStaff()">Add Staff Member</button>
 
 <p>Doctor details</p>
-<table>
+<table class="table table-striped">
   <thead>
+    <th>profile</th>
     <th>Name</th>
     <th>User Name</th>
     <th>Email</th>
   </thead>
   <tbody>
     <tr *ngFor="let doctor of doctors">
+      <td><img [src]="doctor.displayUserDataDTO.profileUrl" alt="" width="35" height="35" style="border-radius:100px;"></td>
       <td>{{doctor.displayUserDataDTO.name}}</td>
       <td>{{doctor.displayUserDataDTO.userName}}</td>
       <td>{{doctor.displayUserDataDTO.email}}</td>
