@@ -5,6 +5,7 @@ import { LoginService } from '../services/login.service';
 import { ChannelComponent } from '../modal/channel/channel.component';
 import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../services/dtd/loggedUser.dtd';
+import { PatientListComponent } from '../modal/patient-list/patient-list.component';
 
 @Component({
   selector: 'app-reciptionist',
@@ -61,6 +62,10 @@ export class ReciptionistComponent implements OnInit {
       initialState:{
         parent: this
       }})
+  }
+
+  openPatientModal(){
+    this.modalRef = this.modalService.show(PatientListComponent);
   }
 
 }

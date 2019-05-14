@@ -14,6 +14,6 @@ export class PatientService{
     }
 
     getAll(){
-        this.httpClient.get(`${BASE_URL}/patient/all-patient-service`);
+        return this.httpClient.get(`${BASE_URL}/patient/all-patient-service`);
     }
 }

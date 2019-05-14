@@ -1,0 +1,24 @@
+<div class="register-new-patient">
+  <div class="modal-header " style="background-color:rgb(18, 199, 87)">
+    <h4 class="modal-title pull-left" style="color:#ffff;">Register new patinet</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>User Name</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patientList">
+            <td>{{patient.displayUserDataDTO.name}}</td>
+            <td>{{patient.displayUserDataDTO.email}}</td>
+            <td>{{patient.displayUserDataDTO.userName}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

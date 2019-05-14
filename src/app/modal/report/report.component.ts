@@ -103,7 +103,7 @@ export class ReportComponent implements OnInit {
     this.reportService.saveMedicalReport(req)
       .subscribe(
         (res) => this.toastr.show("Report saved successfully"),
-        (error) => this.toastr.error("error")
+        (error) => this.toastr.error(error.error.message)
       );
   }
 
