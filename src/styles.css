@@ -5,3 +5,7 @@
     margin: 1.75rem auto;
 }
 }
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 2000 !important;
+}

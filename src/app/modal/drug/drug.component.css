@@ -1,0 +1,41 @@
+.body-content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn-set{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.brand-name{
+    
+    position: relative;
+    top: 11%;
+    margin-bottom: 30px;
+}
+.side-effect{
+    
+    position: relative;
+    top: 11%;
+}
+
+.brand-name-select{
+    background-color: rgb(255, 212, 212);
+    color: rgb(255, 30, 30);
+    border: solid 1px rgb(255, 30, 30);
+    padding: 9px 10px 8px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.side-effect-select{
+    background-color: rgb(212, 255, 226);
+    color: rgb(0, 175, 73);
+    border: solid 1px rgb(0, 175, 73);
+    padding: 9px 10px 8px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}

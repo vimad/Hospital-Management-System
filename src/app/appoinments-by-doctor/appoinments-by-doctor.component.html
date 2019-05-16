@@ -3,7 +3,7 @@
     <ul class="appoinment-set">
         <li class="appoinment-body" *ngFor="let app of appoinments">
             <label class="appoinment-time">You have an Appoinment at <span>{{app.appoinentTime}}</span></label> 
-            <button class="btn btn-success btn-sm accept-btn" (click)="openReportMadal(app)">Add A Report</button> 
+            <button class="btn btn-success btn-sm accept-btn add-appoinment" (click)="openReportMadal(app)">Add A Report</button> 
         </li>
     </ul>
   </div>
