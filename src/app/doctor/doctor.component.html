@@ -48,9 +48,7 @@
             <div class="row">
               <div class="col-md-5">
 
-                <!---Add drug and add channel commented here-->
-                  <button (click)="openDrugViewModal()">Drug View</button>
-
+              
 
 
                   <div class="Profile-details-wraper">
@@ -127,8 +125,11 @@
                                 <span class="badge badge-secondary badge-styles">By Time</span>
                                 <span class="badge badge-success badge-styles">By Limit</span>
                                 <span class="badge badge-danger badge-styles">Appoinmenets</span>
-                                <span class="badge badge-warning badge-styles">Updated</span>
+                                <span class="btn btn-outline-danger" (click)="openDrugViewModal()" style="margin-left:10px;">View all drugs</span>
                                 <span class="btn btn-outline-primary" (click)="openDrugModal()" style="cursor:pointer;margin-left:10px">Drug Management</span>
+                                  <!---Add drug and add channel commented here-->
+                                
+
                             </div>
                         </div>
 
@@ -148,4 +149,6 @@
 
 
 
-
+  <div class="footer-des">
+      <p style="color:rgb(150, 150, 150); text-align: center; margin-top: 10px;" > Copyright Helth Care management System by sanoj dilshan</p>
+      </div>

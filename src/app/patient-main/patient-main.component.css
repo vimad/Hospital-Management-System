@@ -1,0 +1,53 @@
+.select-doct{
+    padding: 20px;
+    border: solid 1px rgb(27, 68, 255);
+    background-color: rgb(224, 243, 255);
+    margin-top: 30px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+.select-doctor{
+    color:  rgb(27, 68, 255);
+    font-size: 17px;
+    font-weight: 500;
+}
+.Profile-details-wraper{
+    padding: 20px;
+    background-color: rgb(235, 255, 240);
+    border: 1.4px solid rgb(15, 168, 41);
+    border-radius: 5px;
+    margin-top: 29px;
+    margin-left: 10px;
+}
+.profile-image{
+    margin-left: 20px;
+    margin-top: 4px;
+}
+.user-details{
+margin-top: 10px;
+}
+.user-det{
+    margin-top: 9px;
+    font-size: 14px;
+    color: #101527;
+    font-family: Roboto;
+}
+.user-det span {
+    font-size: 14px;
+    color: #ff1111;
+    font-family: Roboto;
+}
+.img-carousel{
+    margin-top: 25px;
+    padding: 20px;
+    margin-left: 11px;
+    background-color: rgb(255, 235, 235);
+    border: 1.4px solid rgb(49, 11, 11);
+    border-radius: 5px;
+}
+.footer-des{
+    background-color: rgb(197, 197, 197);
+    padding: 10px;
+    margin-top: 50px;
+}
+

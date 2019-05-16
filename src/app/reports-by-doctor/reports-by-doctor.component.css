@@ -12,3 +12,16 @@ left: 10%;
 .Add-new-report{
     padding: 20px;
 }
+.search-reports{
+    margin-top: 20px;
+    padding: 20px;
+    border: dotted 1px rgb(0, 99, 248);
+    margin-bottom: 10px;
+}
+.report-table{
+    margin-top: 20px;
+    padding: 20px;
+    border: dotted 1px rgb(0, 99, 248);
+    margin-bottom: 10px;
+    background-color: rgb(250, 253, 255);
+}

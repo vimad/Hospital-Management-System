@@ -1,18 +1,31 @@
-<table>
-  <thead>
-    <th>Patient</th>  
-    <th>Doctor Statement</th>
-    <th>Drug Report</th>
-    <th>Drugs</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let report of reportDetails; let i=index">
-      <td *ngIf="patients.length === reportDetails.length">{{patients[i].displayUserDataDTO.name}}</td>  
-      <td>{{report.doctorStatement}}</td>
-      <td>{{report.drugReport}}</td>
-      <td>
-        <span *ngFor="let item of report.drugs">{{item.drugName}} </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!-- <div class="search-reports">
+    <label for="exampleInputEmail1">Search Patient Report</label>
+    <div class="input-group ">
+      
+        <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Reports">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</button>
+        </div>
+      </div>
+</div> -->
+
+<div class="report-table">
+  <table class="table table-hover table-bordered">
+    <thead class="table-primary">
+      <th>Patient name</th>  
+      <th>Doctor Statement</th>
+      <th>Drug Report</th>
+      <th>Drugs</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reportDetails; let i=index">
+        <td *ngIf="patients.length === reportDetails.length">{{patients[i].displayUserDataDTO.name}}</td>  
+        <td style="color:rgb(255, 70, 70);">{{report.doctorStatement}}</td>
+        <td>{{report.drugReport}}</td>
+        <td>
+          <span *ngFor="let item of report.drugs" class="badge badge-success">{{item.drugName}} </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

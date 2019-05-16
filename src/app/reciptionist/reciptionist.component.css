@@ -137,3 +137,8 @@ left: 10px;
     position: relative;
     top: -1%;
 }
+.footer-des{
+    background-color: rgb(197, 197, 197);
+    padding: 10px;
+    margin-top: 50px;
+}
