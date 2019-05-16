@@ -57,9 +57,9 @@
 }
 .Profile-details-wraper{
     padding: 15px;
-    background-color: rgb(246, 250, 255);
-    border: 0.4px solid #22A8EE;
-    border-radius:5px; 
+    background-color: rgb(219, 235, 255);
+    border: 1.4px solid #22A8EE;
+    border-radius: 5px;
     margin-top: 40px;
     margin-left: 10px;
 }

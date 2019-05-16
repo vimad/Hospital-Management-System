@@ -1,22 +1,26 @@
 <div class="register-new-patient">
   <div class="modal-header " style="background-color:rgb(18, 199, 87)">
-    <h4 class="modal-title pull-left" style="color:#ffff;">Register new patinet</h4>
+    <h4 class="modal-title pull-left" style="color:#ffff;">Registed Patient List</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-      <table>
-        <thead>
+      <table class="table table-bordered">
+        <thead class="table-primary">
+            <th>Profile</th>
           <th>Name</th>
           <th>Email</th>
           <th>User Name</th>
+          <th>Actions</th>
         </thead>
         <tbody>
           <tr *ngFor="let patient of patientList">
+              <td><img [src]="patient.displayUserDataDTO.profileUrl" alt="" width="35" height="35" style="border-radius:50px;"></td>
             <td>{{patient.displayUserDataDTO.name}}</td>
             <td>{{patient.displayUserDataDTO.email}}</td>
             <td>{{patient.displayUserDataDTO.userName}}</td>
+            <td><Button class="btn btn-warning btn-sm" style="position:relative; left:30%;">Edit</Button></td>
           </tr>
         </tbody>
       </table>

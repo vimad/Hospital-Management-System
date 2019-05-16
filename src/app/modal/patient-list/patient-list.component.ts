@@ -9,15 +9,17 @@ import { PatientService } from 'src/app/services/patient.service';
 })
 export class PatientListComponent implements OnInit {
 
-  private patientList
+ private patientList;
 
   constructor(public modalRef:BsModalRef, private patientService:PatientService) { }
 
   ngOnInit() {
     this.patientService.getAll()
       .subscribe(
-        (res)=>this.patientList = res,
-        (error)=>console.log(error)
+        (res)=>{
+          this.patientList = res },
+        (error)=>{
+          console.log(error)}
       )
   }
 

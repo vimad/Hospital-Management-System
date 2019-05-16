@@ -38,25 +38,128 @@
 
 
 
+  <div class="row">
+  <div class="col-md-4">
+    <div class="det-content-btns">
+        <h5 class="doctor-details">Add Staff memebre</h5>
+        <p class="update-status">Chek statistics <span>and add role</span></p>
+        <div class="btn-sett">
+      <button (click)="addRole()" class="btn btn-success add-role"><i class="fas fa-user-plus"></i>Add Role</button>
 
-<button (click)="addRole()">Add Role</button>
+      <button (click)="addStaff()" class="btn btn-secondary add-staff"><i class="fas fa-user-md"></i>Add Staff Member</button>
+      </div></div>
 
-<button (click)="addStaff()">Add Staff Member</button>
+      <!---roles--->
 
-<p>Doctor details</p>
-<table class="table table-striped">
-  <thead>
-    <th>profile</th>
-    <th>Name</th>
-    <th>User Name</th>
-    <th>Email</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let doctor of doctors">
-      <td><img [src]="doctor.displayUserDataDTO.profileUrl" alt="" width="35" height="35" style="border-radius:100px;"></td>
-      <td>{{doctor.displayUserDataDTO.name}}</td>
-      <td>{{doctor.displayUserDataDTO.userName}}</td>
-      <td>{{doctor.displayUserDataDTO.email}}</td>
-    </tr>
-  </tbody>
-</table>
+      <div class="det-content-rols">
+          <h5 class="doctor-details">Created Roles / User Types</h5>
+          <p class="update-status">Chek statistics <span>you have added 7 roles</span></p>
+          <div class="btn-sett">
+              <button type="button" class="btn btn-primary" style="margin-left:5px;">
+                  Doctor <span class="badge badge-light">01</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+
+                <button type="button" class="btn btn-primary" style="margin-left:5px;">
+                    Patient <span class="badge badge-light">01</span>
+                    <span class="sr-only">unread messages</span>
+                  </button>
+
+                  <button type="button" class="btn btn-primary" style="margin-left:5px;">
+                      Nurse <span class="badge badge-light">01</span>
+                      <span class="sr-only">unread messages</span>
+                    </button>
+
+                    <button type="button" class="btn btn-primary" style="margin-left:5px;">
+                        Receptionist <span class="badge badge-light">02</span>
+                        <span class="sr-only">unread messages</span>
+                      </button>
+                      <button type="button" class="btn btn-primary" style="margin-left:5px; margin-top:7px;">
+                          Doc1 <span class="badge badge-light">02</span>
+                          <span class="sr-only">unread messages</span>
+                        </button>
+                        <button type="button" class="btn btn-primary" style="margin-left:5px; margin-top:7px;">
+                            Doctor1 <span class="badge badge-light">01</span>
+                            <span class="sr-only">unread messages</span>
+                          </button>
+        </div>
+      </div>
+      
+
+<!---statistics--->
+
+
+    <div class="det-content-stat">
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="status-card">
+                  <h1>1111</h1>
+                  <p>aaaa</p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="status-card">
+                    <h1>1111</h1>
+                    <p>aaaa</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="status-card">
+                    <h1>1111</h1>
+                    <p>aaaa</p>
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                  <div class="status-card">
+                      <h1>1111</h1>
+                      <p>aaaa</p>
+                  </div>
+              </div>
+
+          </div>
+
+   </div>
+
+
+
+
+
+  </div>
+
+
+
+  <div class="col-md-8">
+<div class="doc-det-wraper">
+  <div class="details-wrap">
+      <h5 class="doctor-details">Doctor details</h5>
+      <p class="update-status">Last updated <span> 00:00AM</span></p>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <th>profile</th>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doctor of doctors">
+            <td><img [src]="doctor.displayUserDataDTO.profileUrl" alt="" width="35" height="35" style="border-radius:100px;"></td>
+            <td>{{doctor.displayUserDataDTO.name}}</td>
+            <td>{{doctor.displayUserDataDTO.userName}}</td>
+            <td>{{doctor.displayUserDataDTO.email}}</td>
+            <td><button class="btn btn-warning btn-sm">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+
+    </div>
+  </div>
+  </div>
+
+
