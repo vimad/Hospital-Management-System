@@ -19,14 +19,15 @@
         <td>{{info.patientLimit}}</td>
         <td>{{info.appoinments.length}}</td>
         <td *ngIf="isPatient">
-          <div *ngIf="!info.reserved; else alreadyDone">
+          <div>
             <label class="example-input-wrapper">
               Time:
               <input placeholder="Time:" [(ngModel)]="info.appoinmentTime" [owlDateTimeTrigger]="dt3"
                 [owlDateTime]="dt3" name="et" #val>
               <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
             </label>
-            <button (click)="addAppoinment(info)">Add</button>
+            <button (click)="addAppoinment(info)" *ngIf="!info.reserved">Add</button>
+            <button (click)="editAppoinment(info)" *ngIf="info.reserved">Edit</button>
           </div>
           <ng-template #alreadyDone>
             <div>

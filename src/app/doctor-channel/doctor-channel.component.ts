@@ -63,6 +63,7 @@ export class DoctorChannelComponent implements OnInit, OnChanges {
                     if(item.patients.patientId === this.patientId){
                       // console.log("here");
                       info.reserved = true;
+                      info.reservedId = item.appoinmentId;
                     }
                   }
                 )
@@ -93,6 +94,24 @@ export class DoctorChannelComponent implements OnInit, OnChanges {
       .subscribe(
         (res)=>{
           this.toastrService.success("Appoinment added succesfully");
+          this.getChannelInfo();
+        },
+        (error)=>{
+          this.toastrService.error("Operation faild");
+        }
+      );
+  }
+
+  editAppoinment(info:ChannelInfoDTO){
+    const req = {
+      channelId: info.id.toString(),
+      appoinentTime: info.appoinmentTime.format('HH:mm:ss')
+    }
+
+    this.appoinmentService.updateAppoinment(info.reservedId, req)
+      .subscribe(
+        (res)=>{
+          this.toastrService.success("Appoinment Edited succesfully");
           this.getChannelInfo();
         },
         (error)=>{

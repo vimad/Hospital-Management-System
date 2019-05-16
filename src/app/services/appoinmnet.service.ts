@@ -13,7 +13,7 @@ export class AppoinmentService{
     }
 
     updateAppoinment(id, request){
-        this.httpClient.put(`${BASE_URL}/appoinment/update-Appintment?appointment-Id=${id}`,request);
+        return this.httpClient.put(`${BASE_URL}/appoinment/update-Appintment?appointment-Id=${id}`,request);
     }
 
     addByHospitalStaff(id, request){
