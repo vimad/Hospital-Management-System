@@ -86,7 +86,7 @@ left: 10px;
     color: #fff;
     border-radius: 5px;
     margin-inline-start: 20px;
-    margin-right: 15px;
+    margin-right: 5px;
     margin-top: 30px;
     padding: 20px;
 }
@@ -106,14 +106,20 @@ left: 10px;
 }
 .main-side-btn{
     position: relative;
-    right: 1px;
+    right: 3px;
     padding: 25px;
     
 }
 .main-side-btn-2{
     top: 15px;
     position: relative;
-    right: 1px;
+    right: 3px;
+    padding: 25px;
+}
+.main-side-btn-3{
+    top: 30px;
+    position: relative;
+    right: 3px;
     padding: 25px;
 }
 .doc-details{
@@ -136,4 +142,10 @@ left: 10px;
 .hr-style{
     position: relative;
     top: -1%;
+}
+.icon-style{
+    position: relative;
+    font-size: 26px;
+    top: 5px;
+    left: -6%;
 }
