@@ -9,16 +9,16 @@
     margin-left: -41px;
     margin-top: 14px;
 }
-.reject-btn{
-    margin-right: 10px;
-    margin-left: 165px;
-}
-.accept-btn{
-    margin-right: 10px;
-}
+
+
 .appoinment-time span{
     margin-left: 15px;
     font-size: 14px;
     color: rgb(34, 122, 255);
     font-family: Roboto;
+}
+.add-appoinment{
+    margin-left: 150px;
+    margin-right: 10px;
+  
 }

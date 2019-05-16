@@ -49,10 +49,8 @@
               <div class="col-md-5">
 
                 <!---Add drug and add channel commented here-->
-
-                  <button (click)="openDrugModal()">Drug</button>
                   <button (click)="openDrugViewModal()">Drug View</button>
-                  <!-- <button (click)="openChannelModal()">channel</button> -->
+
 
 
                   <div class="Profile-details-wraper">
@@ -130,7 +128,7 @@
                                 <span class="badge badge-success badge-styles">By Limit</span>
                                 <span class="badge badge-danger badge-styles">Appoinmenets</span>
                                 <span class="badge badge-warning badge-styles">Updated</span>
-                                <span class="badge badge-info badge-styles">Edited</span>
+                                <span class="btn btn-outline-primary" (click)="openDrugModal()" style="cursor:pointer;margin-left:10px">Drug Management</span>
                             </div>
                         </div>
 
