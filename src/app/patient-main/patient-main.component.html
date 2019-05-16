@@ -36,11 +36,26 @@
   </div>
 </nav>
 
-<label for="doctor">Select Channel From Doctor</label>
-<Select [(ngModel)]="selectedDoctorId" (ngModelChange)="change()" name="doctor" ngDefaultControl>
-  <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid" >{{doctor.displayUserDataDTO.name}}</option>
-</Select>
+
+
+<!---patient window---->
+
+<div class="row">
+
+  <div class="col-md-4"></div>
+  <div class="col-md-8">
+
+    <label for="doctor">Select Channel From Doctor</label>
+    <Select [(ngModel)]="selectedDoctorId" (ngModelChange)="change()" name="doctor" ngDefaultControl>
+      <option *ngFor="let doctor of doctorsDetails" [value]="doctor.doctorid" >{{doctor.displayUserDataDTO.name}}</option>
+    </Select>
 
 
 <app-doctor-channel [isPatient] = "true" [docotrId] = "doctorid" [patientId]="loggedPatient.patientId"></app-doctor-channel>
+
+  </div>
+
+</div>
+
+
 
