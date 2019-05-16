@@ -32,6 +32,7 @@ import { ReportsByDoctorComponent } from './reports-by-doctor/reports-by-doctor.
 import { AppoinmentsByDoctorComponent } from './appoinments-by-doctor/appoinments-by-doctor.component';
 import { ReportComponent } from './modal/report/report.component';
 import { PatientListComponent } from './modal/patient-list/patient-list.component';
+import { DrugViewComponent } from './modal/drug-view/drug-view.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { PatientListComponent } from './modal/patient-list/patient-list.componen
     ReportsByDoctorComponent,
     AppoinmentsByDoctorComponent,
     ReportComponent,
-    PatientListComponent
+    PatientListComponent,
+    DrugViewComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,8 @@ import { PatientListComponent } from './modal/patient-list/patient-list.componen
     StaffComponent,
     RoleComponent,
     ReportComponent,
-    PatientListComponent
+    PatientListComponent,
+    DrugViewComponent
   ]
 })
 export class AppModule { }

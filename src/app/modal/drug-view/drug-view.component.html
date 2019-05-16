@@ -1,0 +1,34 @@
+<div class="register-new-patient">
+  <div class="modal-header " style="background-color:rgb(18, 199, 87)">
+    <h4 class="modal-title pull-left" style="color:#ffff;">Register new patinet</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Manufacturer</th>
+          <th>Description</th>
+          <th>Brand Names</th>
+          <th>Side Effects</th>
+          <th>Quantity</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let drug of drugDetails">
+            <td>{{drug.drugName}}</td>
+            <td>{{drug.drugManufacturer}}</td>
+            <td>{{drug.drugDescription}}</td>
+            <td>
+              <span *ngFor="let item of drug.drugBrandNames">{{item.brandname}} </span>
+            </td>
+            <td>
+              <span *ngFor="let item of drug.drugSideEffects">{{item.sideEffect}} </span>
+            </td>
+            <td>{{drug.drugQuantity}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

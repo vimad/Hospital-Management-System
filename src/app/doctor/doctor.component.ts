@@ -9,6 +9,7 @@ import { DrugComponent } from '../modal/drug/drug.component';
 import { initialState } from 'ngx-bootstrap/timepicker/reducer/timepicker.reducer';
 import { ChannelComponent } from '../modal/channel/channel.component';
 import { DoctorService } from '../services/doctor.service';
+import { DrugViewComponent } from '../modal/drug-view/drug-view.component';
 
 @Component({
   selector: 'app-doctor',
@@ -36,6 +37,10 @@ export class DoctorComponent implements OnInit {
       initialState:{
         parent: this
       }})
+  }
+
+  openDrugViewModal(){
+    this.bsModalRef = this.modalService.show(DrugViewComponent);
   }
 
 }
