@@ -1,19 +1,16 @@
-<!---Get report details by doctor id--->
-<div class="reporty-details">
-    <div class="row">
-        <div class="col-md-6">
-    <!--Add new report-->
-        <div class="Add-new-report">
-            <button class="btn btn-primary Add-new-report btn-lg">Add new Report</button>
-        </div>
-</div>
-
-<div class="col-md-6">
-    <!---View Previous reports-->
-        <div class="view-report">
-            <button  class="btn btn-outline-primary view-all-repo btn-lg">View All Reports</button>
-            
-        </div>
-    </div>
-    </div>
-</div>
+<table>
+  <thead>
+    <th>Doctor Statement</th>
+    <th>Drug Report</th>
+    <th>Drugs</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let report of reportDetails">
+      <td>{{report.doctorStatement}}</td>
+      <td>{{report.drugReport}}</td>
+      <td>
+        <span *ngFor="let item of report.drugs">{{item.drugName}} </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

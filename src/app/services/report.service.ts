@@ -26,7 +26,7 @@ export class ReportService{
     }
 
     getAll(){
-        this.httpClient.get(`${BASE_URL}/medical-report/all-medical-report`);
+        return this.httpClient.get(`${BASE_URL}/medical-report/all-medical-report`);
     }
 
     getById(id){

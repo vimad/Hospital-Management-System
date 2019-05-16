@@ -93,7 +93,7 @@ export class ReportComponent implements OnInit {
 
   save(){
     let req = {
-      appoinmentId: this.appoinmentId,
+      appointmentId: this.appoinmentId,
       patientId: this.patientId,
       doctorId: this.doctorId,
       doctorStatement: this.doctorStatement,
@@ -102,7 +102,10 @@ export class ReportComponent implements OnInit {
     }
     this.reportService.saveMedicalReport(req)
       .subscribe(
-        (res) => this.toastr.show("Report saved successfully"),
+        (res) => {
+          this.toastr.show("Report saved successfully");
+          this.modalRef.hide();
+        },
         (error) => this.toastr.error(error.error.message)
       );
   }
