@@ -1,11 +1,13 @@
 <table>
   <thead>
+    <th>Patient</th>  
     <th>Doctor Statement</th>
     <th>Drug Report</th>
     <th>Drugs</th>
   </thead>
   <tbody>
-    <tr *ngFor="let report of reportDetails">
+    <tr *ngFor="let report of reportDetails; let i=index">
+      <td *ngIf="patients.length === reportDetails.length">{{patients[i].displayUserDataDTO.name}}</td>  
       <td>{{report.doctorStatement}}</td>
       <td>{{report.drugReport}}</td>
       <td>
