@@ -77,9 +77,26 @@ margin-bottom: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
     text-align: center; 
+    cursor: pointer;
 }
+
 .footer-des{
     background-color: rgb(197, 197, 197);
     padding: 10px;
     margin-top: 50px;
+}
+.role-typ-text{
+font-size: 16px;
+font-weight: 300;
+letter-spacing: 1px;
+margin-top: 8px;
+}
+.recep-count{
+    margin-top: 10px;
+}
+.doctor-img{
+    position: absolute;
+    left: 18%;
+    font-size: 60px;
+    opacity: 0.2;
 }
